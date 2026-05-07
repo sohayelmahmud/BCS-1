@@ -1,0 +1,14 @@
+# Java class files
+*.class
+
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/

@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"d:\\BCS-Sem-1\\CODES\\PF Class\\test.java","tests":[{"id":1777026529954,"input":"50000","output":"Annual Income: 600000.0 \nAnnual Tax: 0.0 \nMonthly Tax Deduction: 0.0 \nNet Monthly Salary after Tax: 50000.0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\BCS-Sem-1\\CODES\\PF Class\\test.java","group":"local","local":true}
