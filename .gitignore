@@ -15,5 +15,6 @@ Thumbs.db
 
 .cph/
 build/
-Assignment3/*
+Assignment3/
+!Assignment3/
 !Assignment3/.gitkeep
