@@ -12,3 +12,6 @@ Thumbs.db
 # IDE settings
 .vscode/
 .idea/
+
+.cph/
+build/
