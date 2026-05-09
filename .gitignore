@@ -15,6 +15,8 @@ Thumbs.db
 
 .cph/
 build/
-Assignment3/
-!Assignment3/
-!Assignment3/.gitkeep
+
+# temporary ignore till sumitting assignment
+Assignment/
+Lab-8/
+Lab-10/

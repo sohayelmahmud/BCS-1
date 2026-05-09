@@ -102,6 +102,112 @@ public class Question1_5 {
         } while (askAgain());
     }
 
+    // question 3
+    public static void question3() {
+        do {
+            System.out.println("--->Executing Question - 3<-------");
+            String plateNumber = "";
+
+            for (int i=0; i<3; i++){
+                char letter = (char) ((int) (Math.random()*26) + 'A');
+                plateNumber += letter;
+            }
+
+            for (int i=0; i<4; i++){
+                int digit = (int) (Math.random()*10);
+                plateNumber += digit;
+            }
+
+            System.out.println("Generated Plate Number: " + plateNumber);
+
+        } while (askAgain());
+    }
+
+    // question 4
+    public static void question4(){
+        do {
+            System.out.println("--->Executing Question - 4<-------");
+            System.out.print("Enter a decimal number: ");
+
+            if (input.hasNextInt()){
+                int decimal = input.nextInt();
+                int tempDecimal = decimal;
+                String binary = "";
+
+                if (decimal==0){
+                    binary = "0";
+                } else if (decimal<0) {
+                    System.out.println("Please enter a positive number");
+                    continue;
+                } else {
+                    while (tempDecimal>0){
+                        int reminder = tempDecimal%2;
+                        binary = reminder + binary;
+                        tempDecimal /= 2;
+                    }
+                }
+                System.out.println("The Binary value of " + decimal + " is " + binary);
+            } else {
+                System.out.println("Invalid Input: The number is too large.");
+                input.next();
+            }
+
+        } while (askAgain());
+    }
+
+    // question 5
+    public static void question5(){
+        do {
+            System.out.println("--->Executing Question - 4<-------");
+            int score = 0;
+
+            // mcq 1
+            System.out.println("\n1. Most scientists believe global warming is primarily caused by:");
+            System.out.println("1. Human activity (CO2 emissions)\n2. Volcanic eruptions\n3. Solar cycles\n4. Ocean currents");
+            System.out.print("Your answer: ");
+            if (input.nextInt() == 1) score++;
+
+            // mcq 2
+            System.out.println("\n2. Skeptics often point to which historical period to show natural climate variability?");
+            System.out.println("1. The Industrial Revolution\n2. The Medieval Warm Period\n3. The Great Depression\n4. The Renaissance");
+            System.out.print("Your answer: ");
+            if (input.nextInt() == 2) score++;
+
+
+            // mcq 3
+            System.out.println("\n3. Which gas is considered the primary greenhouse gas emitted by humans?");
+            System.out.println("1. Oxygen\n2. Helium\n3. Carbon Dioxide\n4. Argon");
+            System.out.print("Your answer: ");
+            if (input.nextInt() == 3) score++;
+
+            // mcq 4
+            System.out.println("\n4. Skeptics argue that sea level rise is:");
+            System.out.println("1. Not happening at all\n2. Primarily due to underwater earthquakes\n3. A natural process occurring since the last ice age\n4. Caused by ship displacements");
+            System.out.print("Your answer: ");
+            if (input.nextInt() == 3) score++;
+
+            // mcq 5
+            System.out.println("\n5. What was the main goal of the Kyoto Protocol?");
+            System.out.println("1. To ban all cars\n2. To reduce greenhouse gas emissions\n3. To explore Mars\n4. To promote coal mining");
+            System.out.print("Your answer: ");
+            if (input.nextInt() == 2) score++;
+
+            // result
+            System.out.println("\n---- Your Result ----");
+            if (score==5){
+                System.out.println("Excellent");
+            } else if (score==4) {
+                System.out.println("Very good");
+            } else {
+                System.out.println("Time to brush up on your knowledge of global warming.");
+                System.out.println("Check these websites for more info:");
+                System.out.println("- NASA: climate.nasa.gov");
+                System.out.println("- IPCC: ipcc.ch");
+                System.out.println("- Climate Skeptics: petitionproject.org");
+            }
+        } while (askAgain());
+    }
+
     // maiin method
     public static void main(String[] args) {
     int option;
@@ -122,9 +228,9 @@ public class Question1_5 {
             switch (option) {
                 case 1: question1(); break;
                 case 2: question2(); break;
-                // case 3: question3(); break;
-                // case 4: question4(); break;
-                // case 5: question5(); break;
+                case 3: question3(); break;
+                case 4: question4(); break;
+                case 5: question5(); break;
                 case 0: System.out.println("Exiting... Good Bye!"); break;
                 default: System.out.println("Invalid option! Try again.");
             }
