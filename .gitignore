@@ -13,6 +13,18 @@ Thumbs.db
 .vscode/
 .idea/
 
+# personal files
+*.zip
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ZIP
+*.JPG
+*.JPEG
+*.PNG
+*.GIF
+
 .cph/
 build/
 
