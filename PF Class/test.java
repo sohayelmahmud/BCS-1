@@ -1,18 +1,50 @@
+import java.util.Scanner;
+
 public class test {
     public static void main(String[] args) {
-        int[] myList = {1, 2, 3, 4, 5};
-        int n = myList.length;
-
-        int temp = myList[0];
-
-        for (int i = 0; i < n - 1; i++) {
-            myList[i] = myList[i + 1];
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter row: ");
+        int row = input.nextInt();
+        System.out.print("Enter column: ");
+        int column = input.nextInt();
+        int[][] myList = new int[row][column];
+        // random value
+        for (int i=0; i<row; i++) {
+            for (int j=0; j<column; j++){
+                myList[i][j] = (int)(Math.random()*100);
+            }
         }
+        // sum
+        int total=0;
+        for (int i=0; i<row; i++) {
+            for (int j=0; j<column; j++){
+                total += myList[i][j];
+            }
+        }
+        // print main matrix
+        for (int i=0; i<row; i++) {
+            for (int j=0; j<column; j++){
+                System.out.print(myList[i][j] + "    ");
+            }
+            System.out.println();
+        }
+        System.out.println("sum: " + total);
+        for (int i=0; i<row; i++) {
+            for (int j=0; j<column; j++){
+                int i1 = (int)(Math.random()*i);
+                int j1 = (int)(Math.random()*j);
 
-        myList[n - 1] = temp;
-
-        for (int i = 0; i < n; i++) {
-            System.out.print(myList[i] + " ");
+                int temp = myList[i][j];
+                myList[i][j] = myList[i1][j1];
+                myList[i1][j1] = temp;
+            }
+        }
+        // print random indexed matrix
+        for (int i=0; i<row; i++) {
+            for (int j=0; j<column; j++){
+                System.out.print(myList[i][j] + "    ");
+            }
+            System.out.println();
         }
     }
 }
