@@ -1,5 +1,6 @@
 # Java class files
 *.class
+*.txt
 
 # Compiled Python files
 __pycache__/
@@ -29,5 +30,3 @@ Thumbs.db
 build/
 
 # temporary ignore till sumitting assignment
-Assignment3/
-Assignment4/
