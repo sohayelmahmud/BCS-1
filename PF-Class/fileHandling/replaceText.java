@@ -5,7 +5,7 @@ public class replaceText {
     public static void main(String[] args) throws Exception {
         // check command line parameter usage
         if (args.length != 4) {
-            System.out.println("Usage: java ReplaceText sourceFile targetFile oldStr newStr");
+            System.out.println("Usage: java replaceText sourceFile targetFile oldStr newStr");
             System.exit(1);
         }
 
@@ -23,15 +23,19 @@ public class replaceText {
             System.exit(3);
         }
 
-        try (
-                // create input and output files
-                Scanner input = new Scanner(sourceFile);
-                PrintWriter output = new PrintWriter(targetFile);) {
-            while (input.hasNext()) {
-                String s1 = input.nextLine();
-                String s2 = s1.replaceAll(args[2], args[3]);
-                output.println(s2);
-            }
+        // create input and output files manually without try block
+        Scanner input = new Scanner(sourceFile);
+        PrintWriter output = new PrintWriter(targetFile);
+
+        // loop through the file lines
+        while (input.hasNext()) {
+            String oldStr = input.nextLine();
+            String newStr = oldStr.replaceAll(args[2], args[3]);
+            output.println(newStr);
         }
+
+        // close both files manually to save memory
+        input.close();
+        output.close();
     }
 }
